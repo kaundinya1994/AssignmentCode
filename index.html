@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="en-EN" />
+
+    <meta name="viewport" content=" user-scalable=no" />
+    <title>Assignment</title>
+
+    <!-- INCLUDE JEELIZ FACEFILTER SCRIPT -->
+    <script src="/dist/jeelizFaceFilter.js"></script>
+
+    <!-- INCLUDE THREE.JS -->
+    <script src="/three.js"></script>
+    <script src="/GLTFLoader.js"></script>
+
+    <!-- INCLUDE JEELIZ THREE.JS HELPER -->
+    <script src="/JeelizThreeHelper.js"></script>
+
+    <!-- INCLUDE JEELIZRESIZER -->
+    <script src="/JeelizResizer.js"></script>
+
+    <script>
+      sessionStorage.setItem("id", "1");
+    </script>
+    <script src="./main.js"></script>
+
+    <link rel="stylesheet" href="style.css" type="text/css" />
+
+    <script>
+      const changeModel = (id) => {
+        sessionStorage.setItem("id", id.toString());
+
+        var id = sessionStorage.getItem("id");
+
+        document.getElementById("arjs-loader-div_id").style.display = "block";
+        document.getElementById("loader").style.display = "block";
+        document.getElementById("loader-text").style.display = "block";
+        document.getElementById(
+          "loader-text"
+        ).innerHTML = `Loading Necklace${id}`;
+
+        setTimeout(() => {
+          document.getElementById("arjs-loader-div_id").style.display = "none";
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("loader-text").style.display = "none";
+        }, 1100);
+      };
+    </script>
+  </head>
+
+  <body onload="main();">
+    <div class="arjs-loader-div" id="arjs-loader-div_id">
+      <p class="loader-text-class" id="loader-text">Loading necklace</p>
+      <div class="arjs-loader" id="loader">
+        <img src="/loadingbutton.gif" />
+      </div>
+    </div>
+    <canvas width="auto" height="740" id="jeeFaceFilterCanvas"></canvas>
+    <div style="position: absolute; top: 5%; left: 15%; z-index: 100">
+      <img src="face-here1111.png" alt="" />
+    </div>
+
+    <div id="loading_ff">Please wait, necklace is loading...</div>
+
+    <div class="row">
+      <div class="column">
+        <img src="img.png" alt="" onclick="changeModel(1)" />
+      </div>
+
+      <div class="column">
+        <img src="img.png" alt="" onclick="changeModel(2)" />
+      </div>
+      <div class="column">
+        <img src="img.png" alt="" onclick="changeModel(3)" />
+      </div>
+    </div>
+
+    <!-- screenshot button -->
+    <div id="button">
+      <input
+        type="image"
+        src="/screenshot.png"
+        id="photo-button"
+        class="center-btn-screen"
+      />
+      <a id="descarga-link" href="#"></a>
+    </div>
+  </body>
+</html>

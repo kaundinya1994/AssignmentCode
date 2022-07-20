@@ -1,0 +1,113 @@
+body {
+  overflow: hidden;
+  background-color: white;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: contain;
+  margin: 0px;
+}
+.arjs-loader {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.loader-text-class {
+  position: absolute;
+  top: 60%;
+  left: 20%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  font-size: 70px;
+  color: #00000f;
+}
+
+.arjs-loader-div {
+  height: 100%;
+  width: 100%;
+
+  background-color: rgba(255, 255, 255, 255);
+  position: absolute;
+  color: white;
+  display: none;
+  z-index: 9999;
+}
+
+#jeeFaceFilterCanvas {
+  z-index: 10;
+  position: absolute;
+  max-height: 100%;
+  max-width: 100%;
+  left: 50%;
+  top: 50%;
+  width: 100vmin;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+}
+
+#threeCanvas {
+  z-index: 11;
+  position: absolute;
+  max-height: 100%;
+  max-width: 100%;
+  left: 50%;
+  top: 50%;
+  width: 100vmin;
+  transform: translate(-50%, -50%) rotateY(0deg);
+}
+
+@media (max-width: 787px) {
+  #jeeFaceFilterCanvas {
+    right: 0px;
+    top: 60px;
+    transform: rotateY(0deg);
+  }
+}
+
+.row{
+    position: absolute;
+        top: 75%;
+        z-index: 100;
+        height: 250px;
+        width: 100%;
+        display: flex;
+}
+
+.column {
+  flex: 33.34%;
+  border-style: solid;
+  margin: 3%;
+  height: 250px;
+  width: 250px;
+  background-color: white;
+}
+
+.center-btn-screen {
+  position: absolute;
+  top: 90%;
+  left: 40%;
+  height: 200px;
+  width: 200px;
+  margin: auto;
+  z-index: 10;
+}
+
+#loading_ff {
+  position: absolute;
+  font-size: 50px;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  margin: auto;
+  z-index: 1000;
+  top: 70%;
+  display: none;
+  color: #eee;
+}
